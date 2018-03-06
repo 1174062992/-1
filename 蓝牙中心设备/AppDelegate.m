@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "BluetoothCentralEquipmentViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window =[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    BluetoothCentralEquipmentViewController* vc =[[BluetoothCentralEquipmentViewController alloc]init];
+    UINavigationController* nav =[[UINavigationController alloc]initWithRootViewController:vc];
+    self.window.rootViewController =nav;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
